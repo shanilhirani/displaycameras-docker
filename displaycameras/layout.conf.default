@@ -1,18 +1,3 @@
-#!/bin/bash
-
-DIR=`dirname "$(readlink -f "$0")"`
-
-if [ ! -d $DIR/displaycameras ] 
-then
-    # Create the displaycameras directory
-    mkdir displaycameras
-fi
-
-# Move into the newly created directory
-cd displaycameras
-
-# Create the displaycameras.conf file
-cat > displaycameras.conf << EOF
 # This is the configuration file for the displaycameras service intended to
 # play a series of camera feeds from Ubiquity camera systems.
 # This file sets the global options for the service, but the camera names,
@@ -53,31 +38,4 @@ retry=5
 #displaydetect=true
 
 # When rotating camera feeds across a display, how many seconds does each rotation last? (default=5)
-#rotatedelay=8#
-EOF
-
-
-read -p "What is the name of the Camera? "
-cameraName="$REPLY"
-
-read -p "What is the steam url? "
-cameraStreamUrl="$REPLY"
-
-cat > layout.conf.default << EOF
-# Windows
-windows=(main)
-
-# Windows positions
-window_positions=(
-"0 0 1919 1079" \
-)
-
-
-# Camera Names
-camera_names=($cameraName)
-
-# Camera feeds
-camera_feeds=( \
-"$cameraStreamUrl" \
-)
-EOF
+#rotatedelay=8

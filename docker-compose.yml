@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  displaycameras:
+    build: .
+    container_name: displaycameras
+    networks:
+      - displaycameras
+    volumes:
+      - displaycameras:/etc/displaycameras
+    restart: unless-stopped
+    devices: 
+      - "/dev/vchiq:/dev/vchiq"
+      - "/dev/fb0:/dev/fb0"
+
+networks:
+  displaycameras:
+
+volumes:
+  displaycameras:
+    labels:
+      description: "displaycameras configuration"
+    driver: local
