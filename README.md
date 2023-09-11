@@ -1,41 +1,32 @@
 # Docker DisplayCameras
 
-This repo contains the dockerfile which I've made to containerize the [DisplayCameras](https://github.com/Anonymousdog/displaycameras) (repo written by Anonymousdog).
-It uses a modifed version of the repo where you can add a "skip" argument to remove any user interactions (reuqired to build the docker image).
-
-If you are just after the Docker container you can find the working image [here](https://hub.docker.com/repository/docker/jugganourt/displaycameras/general) which contains the insturctions on how to run it.
+This repo contains Docker code which I've forked from https://github.com/Jugganourt to containerize the [DisplayCameras](https://github.com/Anonymousdog/displaycameras) (repo written by Anonymousdog) and
+ with a modifed version of the repo where you can add a "skip" argument to remove any user interactions (reuqired to build the docker image).
 
 ## Files
 
-### Dockerfile
+### DockerFile (Dockerfile)
 
-The file used to create the docker image. One of the calls uses a modifed repo of [Anonymousdog's 
+The file used to create the docker image. One of the calls uses a modifed repo of [Anonymousdog's
 displaycameras](https://github.com/Anonymousdog/displaycameras); the modifications made can be found at the bottom of the file or seen on my [Forked Copy](https://github.com/Jugganourt/displaycameras)
 
-### DisplayCameras_DockerHost.sh
+Dockerfile has been modified to use Jugganourt container image as a source. 
+ If you are just after his Docker container you can find the working image [here](https://hub.docker.com/repository/docker/jugganourt/displaycameras/general) which contains the insturctions on how to run it.
 
-This file can be used on the Docker Host device to create the required config files. It will ask two questions
+### Docker Compose (docker-compose.yaml)
 
-1. What is the name of the Camera?
-2. What is the steam url?
+Easy to read and manage compose file to deploy Displaycameras without docker run commands. 
 
-The script will auto populate the two files with the provided values.
+#### Notable Changes since fork
 
-The script is currenly only designed to create the config files for a single camera stream setup that would be ran on a 1080p monitor.
-
-However the config files can of course be edited once the script has been ran.
-
-For more information on customisation of ther config files please look at the README.md of either the origanl or modifed repo (both linked above) as it provides instructions there.
-
-### docker_intall.sh
-
-This file contains the required steps to get docker installed on a Raspbian Stretch build
+I prefer to copy configuration for the display cameras as part of build runtime therefore no need precreate anything on the docker host as eveything can be housed in this repo and managed through a simple git clone and version control :thumbsup:
 
 ## Special thanks
 
-The orignal unmodifed displaycameras repo was created by Anonymousdog (https://github.com/Anonymousdog/displaycameras).
+1. Unmodifed displaycameras repo was created by Anonymousdog (https://github.com/Anonymousdog/displaycameras).
+2. The original docker implmenation was created by Jugganourt and his modifications (see below) (https://github.com/Jugganourt).
 
-### My Modifications
+#### Jugganourt Modifications
 
 The modifications I have made allows the user to provide a `skip` flag to the `install.sh`, for example:
 
