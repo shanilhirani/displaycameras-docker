@@ -1,3 +1,5 @@
-#!/bin/bash -ev
+#!/bin/bash -e
 
-displaycameras stop; displaycameras start;
+displaycameras start;
+displaycameras status;
+/bin/bash 
