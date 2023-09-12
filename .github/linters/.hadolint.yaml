@@ -1,0 +1,10 @@
+---
+##########################
+## Hadolint config file ##
+##########################
+
+failure-threshold: warning
+
+override:
+  warning:
+    - DL3004

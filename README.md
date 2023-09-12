@@ -1,6 +1,6 @@
 # Docker DisplayCameras
 
-This repository contains Docker code which I've forked from [Jugganourt](https://github.com/Jugganourt/displaycameras-docker) which containerizised the [DisplayCameras](https://github.com/Anonymousdog/displaycameras) (repository written by Anonymousdog).
+This repository contains Docker code which I've forked from [Jugganourt's displaycameras-docker](https://github.com/Jugganourt/displaycameras-docker) which containerizised the [displaycameras](https://github.com/Anonymousdog/displaycameras) (repository written by Anonymousdog).
 
 ## Notable Changes
 
@@ -10,7 +10,7 @@ This repository contains Docker code which I've forked from [Jugganourt](https:/
 
 ### Dockerfile
 
-The file used to create the docker image. One of the calls uses a modifed repository of [Anonymousdog's displaycameras](https://github.com/Anonymousdog/displaycameras) which implements a `no-op` install by [Jugganourts' Forked Copy](https://github.com/Jugganourt/displaycameras)
+The file used to create the docker image. One of the calls uses a modifed repository of [Anonymousdog's displaycameras](https://github.com/Anonymousdog/displaycameras) which implements a `no-op` install by [Jugganourts' forked copy](https://github.com/Jugganourt/displaycameras)
 
 Dockerfile has been modified to use `Jugganourt` container image as a source. If you are just after his Docker container you can find the working image [here](https://hub.docker.com/repository/docker/jugganourt/displaycameras/general) which contains the insturctions on how to run it.
 
@@ -22,5 +22,5 @@ Easy to read and manage compose file to deploy Displaycameras without docker run
 
 ## Special Thanks
 
-1. Unmodifed displaycameras repository was created by Anonymousdog (https://github.com/Anonymousdog/displaycameras).
-2. The original docker implmenation was created by Jugganourt and his modifications (see below) (https://github.com/Jugganourt).
+1. Unmodifed displaycameras repository was created by [Anonymousdog](https://github.com/Anonymousdog/displaycameras).
+2. The original docker implmenation was created by `Jugganourt` and his modifications to  [displaycameras](https://github.com/Jugganourt/displaycameras) & [displaycameras Docker](https://github.com/Jugganourt/displaycameras-docker).
