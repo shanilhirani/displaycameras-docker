@@ -1,5 +1,3 @@
 #!/bin/bash -e
 
-displaycameras start
-displaycameras status
-/bin/bash
+displaycameras stop; displaycameras start;
