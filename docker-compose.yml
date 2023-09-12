@@ -8,7 +8,7 @@ services:
     volumes:
       - displaycameras:/etc/displaycameras
     restart: unless-stopped
-    devices: 
+    devices:
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/fb0:/dev/fb0"
     tty: true
