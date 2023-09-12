@@ -12,6 +12,6 @@ RUN unzip master.zip
 WORKDIR /home/displaycameras-master
 RUN chmod +x install.sh
 RUN sudo ./install.sh -r N -g ""
-COPY --chown=root:root --chmod=0644 displaycameras/ /etc/displaycameras 
+COPY --chown=root:root --chmod=0644 displaycameras/ /etc/displaycameras
 
 ENTRYPOINT displaycameras stop ; displaycameras start ; /bin/bash
