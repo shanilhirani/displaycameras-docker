@@ -3,7 +3,7 @@
 ## Hadolint config file ##
 ##########################
 
-failure-threshold: warning
+failure-threshold: error
 
 override:
   warning:
